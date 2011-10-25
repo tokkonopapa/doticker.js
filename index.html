@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>doticker.js</title>
+<style>
+body {
+	font-family: "lucida grande",lucida,tahoma,helvetica,arial,sans-serif;
+	font-size: 14px;
+}
+#ticker {
+	min-height: 100px;
+	margin-right: 20px;
+	float: left;
+}
+#form p {
+	margin: 0.5em;
+}
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+</head>
+<body>
+<!-- ここにウィジェットを挿入する div を置きます（高さを必ず指定します） -->
+<div id="ticker"></div>
+
+<!-- パラメータテスト用のフォーム -->
+<div id="form">
+	<form action="javascript:void(0);">
+		<p>user: <input type="text" name="name" size="15"></p>
+		<p>loop: 
+			<select name="loop">
+				<option value="false">false</option>
+				<option value="true">true</option>
+			</select>
+		</p>
+		<p>maxCodes: <input type="text" name="maxCodes" size="10"></p>
+		<p>interval: <input type="text" name="interval" size="10"></p>
+		<p>scrollbar: 
+			<select name="scrollbar">
+				<option value="false">false</option>
+				<option value="true">true</option>
+			</select>
+		</p>
+		<p>duration: 
+			<select name="duration">
+				<option value="slow">slow</option>
+				<option value="normal">normal</option>
+				<option value="fast">fast</option>
+			</select> <small>or msec</small>
+		</p>
+		<p>width: <input type="text" name="width" size="10"> <small>or auto</small></p>
+		<p>height: <input type="text" name="height" size="10"></p>
+		<p>background: <input type="text" name="background" size="10"></p>
+		<p>bodyground: <input type="text" name="bodyground" size="10"></p>
+		<p>bordercolor: <input type="text" name="bordercolor" size="10"></p>
+		<p><input type="submit" value="変更する"></p>
+	</form>
+</div>
+
+<script type="text/javascript" src="doticker.min.js"></script>
+<script type="text/javascript">
+function setForm(options) {
+	var i, value;
+
+	for (i in options) {
+		value = options[i];
+		if (value === true) {
+			value = "true";
+		} else if (value === false) {
+			value = "false";
+		}
+		$("[name='" + i + "']").val(value);
+	}
+}
+
+function getForm() {;
+	var i, value,
+		f = $('form p').children(),
+		n =  f.length-1,
+		opts = {};
+
+	for (i = 0; i < n; i++) {
+		value = $(f[i]).val();
+		if (value === "true") {
+			value = true;
+		} else if (value === "false") {
+			value = false;
+		}
+		opts[$(f[i]).attr("name")] = value;
+	}
+
+	return opts;
+}
+
+$(function() {
+	var options = {
+		name: 'tokkonopapa',
+		loop: true,
+		maxCodes: 10,
+		interval: 6000,
+		scrollbar: false,
+		duration: 'normal',
+		width: '250px',
+		height: '300px',
+		background: '#9bc6f2',
+		bodyground: '#fff',
+		bordercolor: '#888'
+	};
+
+	var ticker = $("#ticker").doticker(options);
+
+	setForm(options);
+	$('form').submit(function() {
+		$(ticker).doticker(getForm());
+	});
+});
+</script>
+</body>
+</html>
