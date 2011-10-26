@@ -1,5 +1,5 @@
 /*
- * doticker.min.js v0.9.0
+ * doticker.js v0.9.0
  *
  * Copyright (c) 2011 tokkonoPapa http://tokkono.cute.coocan.jp/blog/slow/
  *
@@ -38,6 +38,7 @@
 		var setupStyles = function () {
 			var s = 
 '#[id]wrap {' +
+	'float:left;' +
 	'width:[width];' +
 	'margin:0 auto;' +
 	'padding:0;' +
@@ -80,9 +81,10 @@
 	'margin-left:40px !important;' +
 '}\n' +
 '#[id]head li {' +
+	'float:left;' +
 	'margin-right:4px !important;' +
 	'font-size:12px !important;' +
-	'float:left;' +
+	'background:[background];' +
 '}\n' +
 '#[id]body {' +
 	'clear:both;' +
@@ -97,6 +99,7 @@
 '#[id]body li {' +
 	'padding:8px !important;' +
 	'border-bottom:1px dotted [bordercolor];' +
+	'background:[bodyground];' +
 '}\n' +
 '#[id]doc img {' +
 	'width:50px !important;' +
@@ -281,17 +284,17 @@
 					var i = f.length - 1;
 					if (options.loop === true && options.scrollbar === false) {
 						// Remove unvisible items
-						while (i >= 0) {
+						for (; i >= 0; i--) {
 							if ($(f[i]).offset().top > options.bottom) {
-								$(f[i--]).remove();
+								$(f[i]).remove();
 							} else {
 								break;
 							}
 						}
 					} else {
 						// Remove overflow items
-						while (i >= options.maxCodes) {
-							$(f[i--]).remove();
+						for (; i >= options.maxCodes; i--) {
+							$(f[i]).remove();
 						}
 					}
 				});
