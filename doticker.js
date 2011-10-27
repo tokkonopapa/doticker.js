@@ -1,5 +1,5 @@
 /*
- * doticker.js v0.9.0
+ * doticker.js v0.9.1
  *
  * Copyright (c) 2011 tokkonoPapa http://tokkono.cute.coocan.jp/blog/slow/
  *
@@ -14,7 +14,7 @@
 			maxCodes: 10,
 			interval: 6000,
 			scrollbar: false,
-			duration: 'normal',
+			duration: 'slow',
 			width: 'auto',
 			height: '300px',
 			background: '#9bc6f2',
@@ -29,36 +29,36 @@
 		var options = $.extend(defaults, opts);
 
 		// For restart
-		$this.empty();
 		clearTimeout(options.timer);
+		$this.empty();
 
 		//
 		// Setup styles
 		//
 		var setupStyles = function () {
 			var s = 
-'#[id]wrap {' +
+'.doticker-wrap {' +
 	'float:left;' +
 	'width:[width];' +
 	'margin:0 auto;' +
 	'padding:0;' +
 	'border-radius:5px;' +
 	'background:[background];' +
-//	'font-family:"lucida grande",lucida,tahoma,helvetica,arial,sans-serif;' +
+	'font-family:"lucida grande",lucida,tahoma,helvetica,arial,sans-serif !important;' +
 '}\n' +
-'#[id]wrap * {' +
+'.doticker-wrap * {' +
 	'margin:0 !important;' +
 	'padding:0 !important;' +
 '}\n' +
-'#[id]wrap img {' +
+'.doticker-wrap img {' +
 	'float:left;' +
 	'border:none;' +
 '}\n' +
-'#[id]wrap li {' +
+'.doticker-wrap li {' +
 	'overflow:hidden;' +
 	'list-style-type:none !important;' +
 '}\n' +
-'#[id]wrap li:before {' +
+'.doticker-wrap li:before {' +
 	'content:none !important;' +
 '}\n' +
 '#[id]head,\n' +
@@ -90,28 +90,30 @@
 	'clear:both;' +
 	'height:[height];' +
 	'margin:0 1px !important;' +
-	'font-size:14px !important;' +
-	'line-height:1.2 !important;' +
+	'font-size:12px;' +
+	'line-height:1.2;' +
 	'overflow:[scrollbar];' +
 	'border-radius:5px;' +
 	'background:[bodyground];' +
 '}\n' +
-'#[id]body li {' +
+'.[id]doc {' +
+	'clear:both;' +
 	'padding:8px !important;' +
 	'border-bottom:1px dotted [bordercolor];' +
 	'background:[bodyground];' +
 '}\n' +
-'#[id]doc img {' +
+'.[id]doc img {' +
 	'width:50px !important;' +
 	'height:50px !important;' +
 '}\n' +
-'#[id]doc div {' +
+'.[id]doc div {' +
 	'margin-left:58px !important;' +
 '}\n' +
-'#[id]doc h5 {' +
+'.[id]doc h5 {' +
+	'font-size:100%;' +
 	'font-weight:normal;' +
 '}\n' +
-'#[id]doc p {' +
+'.[id]doc p {' +
 	'margin-top:4px !important;' +
 	'font-size:12px !important;' +
 '}\n' +
@@ -158,11 +160,9 @@
 		var setupWidget = function () {
 			var id = options.id;
 			$this.append(
-'<div id="' + id + 'wrap">' +
+'<div class="doticker-wrap">' +
 	'<div id="' + id + 'head"></div>' +
-	'<div id="' + id + 'body">' +
-		'<ul id="' + id + 'doc"></ul>' +
-	'</div>' +
+	'<div id="' + id + 'body"></div>' +
 	'<div id="' + id + 'foot">' +
 		'<a href="http://jsdo.it/">' +
 			'<img src="' + options.url_logo + '" title="jsdo.it" />' +
@@ -174,13 +174,13 @@
 
 			// Shortcut objects
 			options.bottom = $('#' + id + 'foot').offset().top;
-			options.doc = $('#' + id + 'doc');
-			options.doc.pend = options.loop === true ? options.doc.prepend : options.doc.append;
+			options.body = $('#' + id + 'body');
+			options.body.pend = options.loop === true ? options.body.prepend : options.body.append;
 
 			// Mouse event
 			$('#' + id + 'body').hover(
-				function () { options.doc.addClass('doticker-stop'); },
-				function () { options.doc.removeClass('doticker-stop'); }
+				function () { options.body.addClass('doticker-stop'); },
+				function () { options.body.removeClass('doticker-stop'); }
 			);
 		};
 
@@ -226,9 +226,8 @@
 				var i;
 				for (i = 0; i < n; i++) {
 					var code = list.results[i];
-					options.codes[i] = code;
-					options.codes[i].content =
-'<li>' +
+					options.codes[i] =
+'<div><div class="' + options.id + 'doc">' +
 	'<a href="' + code.url + '" target="_blank">' +
 		'<img src="' + code.thumbnail['100'] + '" title="' + code.title + '" />' +
 	'</a>' +
@@ -243,7 +242,7 @@
 			'&hearts; ' + code.statistic.favorite +
 		'</p>' +
 	'</div>' +
-'</li>';
+'</div></div>';
 				}
 			}
 
@@ -263,24 +262,24 @@
 		//
 		var mainLoop = function () {
 			clearTimeout(options.timer);
-			if (options.doc.hasClass('doticker-stop') === false) {
+			if (options.body.hasClass('doticker-stop') === false) {
 				// Restet pointer
 				if (options.current >= options.maxCodes) {
 					options.current = 0;
 				}
 
 				// Add content
-				var e = options.doc.pend(options.codes[options.current].content).children(':first');
+				var e = options.body.pend(options.codes[options.current]).children(':first');
 
 				// It causes jump effect without height setting
 				// cf: http://blog.pengoworks.com/index.cfm/2009/4/21/Fixing-jQuerys-slideDown-effect-ie-Jumpy-Animation
 				e.height(e.height());
 
 				// Show with animation
-//				e.hide().css({opacity: 0}).slideDown(options.duration)
-//					.animate({opacity: 1}, options.duration, function () {
-				e.hide().slideDown(options.duration, function () {
-					var f = options.doc.children();
+				e.hide().css({opacity: 0}).slideDown(options.duration)
+					.animate({opacity: 1}, options.duration, function () {
+//				e.hide().slideDown(options.duration, function () {
+					var f = options.body.children();
 					var i = f.length - 1;
 					if (options.loop === true && options.scrollbar === false) {
 						// Remove unvisible items
@@ -324,7 +323,7 @@
 				},
 				timeout: options.timeout,
 				error: function (jqXHR, textStatus, errorThrown) {
-					options.doc.append('<li>' + textStatus + '</li>');
+					options.body.append('<div class="' + options.id + 'doc">' + textStatus + '</div>');
 				}
 			});
 
