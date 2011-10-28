@@ -1,5 +1,5 @@
 /*
- * doticker.js v0.9.1
+ * doticker.js v0.9.2
  *
  * Copyright (c) 2011 tokkonoPapa http://tokkono.cute.coocan.jp/blog/slow/
  *
@@ -54,13 +54,6 @@
 	'float:left;' +
 	'border:none;' +
 '}\n' +
-'.doticker-wrap li {' +
-	'overflow:hidden;' +
-	'list-style-type:none !important;' +
-'}\n' +
-'.doticker-wrap li:before {' +
-	'content:none !important;' +
-'}\n' +
 '#[id]head,\n' +
 '#[id]foot {' +
 	'min-height:32px !important;' +
@@ -80,8 +73,7 @@
 	'margin-top:-4px !important;' +
 	'margin-left:40px !important;' +
 '}\n' +
-'#[id]head li {' +
-	'float:left;' +
+'#[id]head p {' +
 	'margin-right:4px !important;' +
 	'font-size:12px !important;' +
 	'background:[background];' +
@@ -91,7 +83,6 @@
 	'height:[height];' +
 	'margin:0 1px !important;' +
 	'font-size:12px;' +
-	'line-height:1.2;' +
 	'overflow:[scrollbar];' +
 	'border-radius:5px;' +
 	'background:[bodyground];' +
@@ -99,8 +90,8 @@
 '.[id]doc {' +
 	'clear:both;' +
 	'padding:8px !important;' +
-	'border-bottom:1px dotted [bordercolor];' +
 	'background:[bodyground];' +
+	'border-bottom:1px dotted [bordercolor];' +
 '}\n' +
 '.[id]doc img {' +
 	'width:50px !important;' +
@@ -129,7 +120,6 @@
 '}\n' +
 '#[id]foot p {' +
 	'top:50%;' +
-	'display:block;' +
 	'margin-left:90px !important;' +
 	'margin-right:8px !important;' +
 '}\n';
@@ -199,17 +189,11 @@
 	'<h4>' +
 		'<a href="' + user.url + '" title="profile" target="_blank">' + user.name + '</a>' +
 	'</h4>' +
-	'<ul>' +
-		'<li>' +
-			'<a href="' + user.url + '/codes" title="codes" target="_blank">codes ' + user.counts.codes + '</a> /' +
-		'</li>' + 
-		'<li>' +
-			'forked ' + user.counts.forked + ' /' +
-		'</li>' +
-		'<li>' +
-			'<a href="' + user.url + '/favorites" title="favorites" target="_blank">&hearts; ' + user.counts.favorited + '</a>' +
-		'</li>' +
-	'</ul>' +
+	'<p>' +
+		'<a href="' + user.url + '/codes" title="codes" target="_blank">codes ' + user.counts.codes + '</a> / ' +
+		'forked ' + user.counts.forked + ' / ' +
+		'<a href="' + user.url + '/favorites" title="favorites" target="_blank">&hearts; ' + user.counts.favorited + '</a>' +
+	'</p>' +
 '</div>'
 			);
 		};
@@ -248,7 +232,7 @@
 
 			// Behavior options
 			options.current = options.maxCodes = n;
-			options.timer = false;
+			options.timer = null;
 			options.timeout = options.interval;
 			if (options.loop !== true) {
 				options.interval = options.duration = 0;
