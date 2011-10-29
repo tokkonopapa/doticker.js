@@ -80,7 +80,7 @@ $("#some-element").doticker({options, …});
 	- ボディー中の各記事を区切る点線の色を指定します。
 	- Specify border color.
 
-### Licence
+## Licence
 Copyright 2011 [tokkonopapa](http://tokkono.cute.coocan.jp/blog/slow/)  
 Licennced under the terms of an MIT-style license.  
 See http://www.opensource.org/licenses/MIT
