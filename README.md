@@ -37,7 +37,7 @@ $(function() {
 ``` javascript
 $(”#some-element”).doticker({options, …});
 ```
-> where `option` [default] are
+> where `options` [default] are
 
 * `name` [required] -- 
 jsdo.it のユーザー名を指定します。user name for jsdo.it.
