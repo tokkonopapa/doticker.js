@@ -1,5 +1,5 @@
 /*
- * doticker.js v0.9.2
+ * doticker.js v1.0.0
  *
  * Copyright (c) 2011 tokkonoPapa http://tokkono.cute.coocan.jp/blog/slow/
  *
@@ -207,11 +207,12 @@
 			if (list.results !== undefined) {
 				n = list.results.length < options.maxCodes ?
 					list.results.length : options.maxCodes;
-				var i;
+				var i, code;
 				for (i = 0; i < n; i++) {
-					var code = list.results[i];
-					options.codes[i] =
-'<div><div class="' + options.id + 'doc">' +
+					code = list.results[i];
+					options.codes[i] = document.createElement('div');
+					options.codes[i].innerHTML =
+'<div class="' + options.id + 'doc">' +
 	'<a href="' + code.url + '" target="_blank">' +
 		'<img src="' + code.thumbnail['100'] + '" title="' + code.title + '" />' +
 	'</a>' +
@@ -226,7 +227,7 @@
 			'&hearts; ' + code.statistic.favorite +
 		'</p>' +
 	'</div>' +
-'</div></div>';
+'</div>';
 				}
 			}
 
