@@ -27,11 +27,12 @@ http://tokkono.cute.coocan.jp/blog/slow/index.php/programming/dotickerjs/
 $(function() {
 	$("#ticker").doticker({name: 'username'});
 });
+</script>
 ```
 
 ## 概要 Synopsys
 ``` javascript
-$(”#some-element”).doticker({options, …});
+$("#some-element").doticker({options, …});
 ```
 > where `options` [default] are
 
