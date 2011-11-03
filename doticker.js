@@ -1,5 +1,5 @@
 /*
- * doticker.js v1.0.0
+ * doticker.js v1.0.1
  *
  * Copyright (c) 2011 tokkonoPapa http://tokkono.cute.coocan.jp/blog/slow/
  *
@@ -129,8 +129,8 @@
 
 			// Replace '[key]' with value in options
 			$.each('id width height scrollbar background bodyground bordercolor'.split(' '), function (i, key) {
-				s = s.replace(new RegExp('\\[' + key + '\\]', 'img'), options[key]);
-//				s = s.split('[' + key + ']').join(options[key]);
+//				s = s.replace(new RegExp('\\[' + key + '\\]', 'img'), options[key]);
+				s = s.split('[' + key + ']').join(options[key]);
 			});
 
 			// Add styles into the head
@@ -232,6 +232,7 @@
 			}
 
 			// Behavior options
+			options.ie = navigator.userAgent.match(/MSIE\s([^;]*)/);
 			options.current = options.maxCodes = n;
 			options.timer = null;
 			options.timeout = options.interval;
@@ -240,6 +241,17 @@
 			}
 
 			return n;
+		};
+
+		//
+		// Exec animation
+		//
+		var doAnimation = function (obj, callback) {
+			if (options.ie) {
+				obj.hide().slideDown(options.duration, callback);
+			} else {
+				obj.hide().css({opacity: 0}).slideDown(options.duration).animate({opacity: 1}, options.duration, callback);
+			}
 		};
 
 		//
@@ -261,9 +273,7 @@
 				e.height(e.height());
 
 				// Show with animation
-				e.hide().css({opacity: 0}).slideDown(options.duration)
-					.animate({opacity: 1}, options.duration, function () {
-//				e.hide().slideDown(options.duration, function () {
+				doAnimation(e, function () {
 					var f = options.body.children();
 					var i = f.length - 1;
 					if (options.loop === true && options.scrollbar === false) {
@@ -293,6 +303,10 @@
 			}
 		};
 
+		var errorMsg = function (msg) {
+			options.body.append('<div class="' + options.id + 'doc">' + msg + '</div>');
+		};
+
 		//
 		// Initialization
 		//
@@ -308,7 +322,7 @@
 				},
 				timeout: options.timeout,
 				error: function (jqXHR, textStatus, errorThrown) {
-					options.body.append('<div class="' + options.id + 'doc">' + textStatus + '</div>');
+					errorMsg(textStatus);
 				}
 			});
 
@@ -316,17 +330,22 @@
 			$.ajax({
 				url: options.url_user,
 				success: function (user, textStatus, jqXHR) {
-					showProfile(user);
+					if (user.error === undefined) {
+						showProfile(user);
 
-					// Now get the codes list
-					$.ajax({
-						url: options.url_list,
-						success: function (list, textStatus, jqXHR) {
-							if (setupCodes(list)) {
-								mainLoop();
+						// Now get the codes list
+						$.ajax({
+							url: options.url_list,
+							success: function (list, textStatus, jqXHR) {
+								if (setupCodes(list)) {
+									mainLoop();
+								}
 							}
-						}
-					});
+						});
+					}
+					else {
+						errorMsg(user.error);
+					}
 				}
 			});
 		};
