@@ -23,7 +23,7 @@ widget.
 ### CSS: ###
 
 ```css
-\#ticker {
+#ticker {
 	min-height: 300px;
 }
 ```
