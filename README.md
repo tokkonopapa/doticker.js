@@ -56,8 +56,8 @@ where `options` [ default ] are
     Specify user name for jsdo.it.
 
 *   `loop` [ `true` ]  
-    一定間隔毎に表示を更新する場合には `true` を、一気に表示させるには `false` 
-    を指定します。  
+    一定間隔毎に表示を更新する場合には `true` を、起動時に全てを表示するには 
+    `false` を指定します。  
     If `true` then timed interval, or `false` then load all codes.
 
 *   `maxCodes` [ `10` ]  
