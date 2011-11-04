@@ -46,7 +46,7 @@ $(function() {
 -------------
 
 ```javascript
-$("#some-element").doticker({options, …});
+$("#some-element").doticker({options, ...});
 ```
 
 where `options` [ default ] are
