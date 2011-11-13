@@ -76,8 +76,8 @@ $(function() {
 			<h2 class="toggle closed"><a href="javascript:void(0);">ダウンロード</a></h2>
 			<div class="hidden" id="download">
 				<ul>
-					<li><a href="http://github.com/tokkonopapa/doticker.js/zipball/master"><img src="http://github.com/images/modules/download/zip.png"></a></li>
-					<li><a href="http://github.com/tokkonopapa/doticker.js/tarball/master"><img src="http://github.com/images/modules/download/tar.png"></a></li>
+					<li><a href="http://github.com/tokkonopapa/doticker.js/zipball/master"><img src="https://github.com/images/modules/download/zip.png"></a></li>
+					<li><a href="http://github.com/tokkonopapa/doticker.js/tarball/master"><img src="https://github.com/images/modules/download/tar.png"></a></li>
 				</ul>
 				<p>あるいは次のように <a href="http://git-scm.com/" target="_blank">Git</a> でクローンを作成して下さい。</p>
 				<pre><code>$ git clone git://github.com/tokkonopapa/doticker.js</code></pre>
@@ -146,12 +146,13 @@ $(function() {
 			<div class="social">
 				<a href="http://twitter.com/share" class="twitter-share-button"
 					data-url="http:/tokkonopapa.github.com/doticker.js/" data-count="horizontal"
+					data-text="jsdo.itで公開したマイコードをブログに流してくれるjQueryプラグイン"
 					data-via="tokkonoPapa" data-related="tokkonoPapa" data-lang="ja">Tweet</a>
 				<script src="http://platform.twitter.com/widgets.js" async></script>
 			</div>
 
 			<div class="social">
-				<script type="text/javascript" src="https://apis.google.com/js/plusone.js" async>
+				<script src="https://apis.google.com/js/plusone.js" async>
 					{lang: 'ja'}
 				</script>
 				<g:plusone size="medium" href="http://tokkonopapa.github.com/doticker.js/"></g:plusone>
@@ -205,7 +206,7 @@ $(function() {
 </script>
 -->
 <script>
-	var _gaq=[['_setAccount','UA-20543951-2'],['_trackPageview']];
+	var _gaq=[['_setAccount','UA-20543951-2'],['_trackPageview'],['_trackPageLoadTime']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
 	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 	s.parentNode.insertBefore(g,s)}(document,'script'));
