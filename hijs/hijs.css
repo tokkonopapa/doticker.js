@@ -1,0 +1,6 @@
+code { color: #aaa; }
+code .keyword              { color: #7492b5 }
+code .string, code .regexp { color: #2d8740 }
+code .class, code .special { color: blue }
+code .number               { color: #F8BB00 }
+code .comment              { color: #B43D3D }
