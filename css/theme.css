@@ -147,16 +147,24 @@ pre {
 	vertical-align: bottom;
 }
 
-/* Style adjustments for viewports 480px and over */
-@media only screen and (min-width: 480px) {
-/*	body {
-		font-size: 75%;
-	}*/
+/* Style adjustments for viewports 768px and over */
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: 85%;
+	}
+	.fork img {
+		width: 85%;
+		height: 85%;
+	}
 }
 
-/* Style adjustments for viewports 768px and over */
-@media only screen and (min-width: 768px) {
-/*	body {
-		font-size: 85%;
-	}*/
+/* Style adjustments for viewports 480px and over */
+@media only screen and (max-width: 480px) {
+	body {
+		font-size: 75%;
+	}
+	.fork img {
+		width: 75%;
+		height: 75%;
+	}
 }
