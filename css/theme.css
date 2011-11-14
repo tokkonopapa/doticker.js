@@ -3,6 +3,11 @@
 */
 @import url("style.css");
 
+@font-face {
+	font-family: "Didact Gothic";
+	src: url("http://fonts.googleapis.com/css?family=Didact+Gothic") format("truetype");
+}
+
 body {
 	color: #aaa;
 	background: #222832 url("blackmamba.png");
