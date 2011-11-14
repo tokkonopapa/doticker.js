@@ -12,4 +12,7 @@ $(function () {
 		$(this).toggleClass("closed");
 		$(this).next(":first").slideToggle();
 	});
+
+	/* google-code-prettify */
+	prettyPrint();
 });

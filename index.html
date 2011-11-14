@@ -15,10 +15,9 @@
 
 	<link rel="stylesheet" href="css/theme.css">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Didact+Gothic">
-	<link rel="stylesheet" href="hijs/hijs.css">
+	<link rel="stylesheet" href="google-code-prettify/sunburst.css">
 
-	<script src="js/libs/modernizr-2.0.6.min.js"></script>
-	<script src="js/libs/respond.min.js"></script>
+	<script src="js/libs/modernizr.custom.js"></script>
 </head>
 <body>
 	<div id="header-container">
@@ -29,7 +28,7 @@
 					<li><a href="#" class="language">English</a></li>
 				</ul>
 			</nav>
-			<h1 id="title"><span class="logo">dotiker.</span><span>js</span></h1>
+			<h1 id="title"><span class="logo">doticker.<span>js</span></span></h1>
 			<p>Share JavaScript, HTML5 and CSS</p>
 			<a class="fork" href="https://github.com/tokkonopapa/doticker.js"><img src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
 		</header>
@@ -37,13 +36,13 @@
 
 	<div id="main" class="wrapper">
 		<article id="japanese" class="article">
-			<header class="border"></header>
+			<hr class="border">
 
 			<h2 class="check">何するモノ？</h2>
-			<p><span class="logo">doticker.</span><span>js</span> は、<a href="http://twitter.com/about/resources/widgets/widget_profile" target="_blank">Twitter 公式のプロフィールウィジェット</a> のように、<a href="http://jsdo.it/" target="_blank">jsdo.it</a> で公開したコードをブログに流してくれる jQuery プラグインです。</p>
+			<p><span class="logo">doticker.<span>js</span></span> は、<a href="http://twitter.com/about/resources/widgets/widget_profile" target="_blank">Twitter 公式のプロフィールウィジェット</a> のように、<a href="http://jsdo.it/" target="_blank">jsdo.it</a> で公開したコードをブログに流してくれる jQuery プラグインです。</p>
 
 			<h2 class="toggle closed"><a href="javascript:void(0);">使い方</a></h2>
-			<pre class="hidden"><code>&lt;div id="ticker"&gt;&lt;/div&gt;
+			<pre class="prettyprint lang-html hidden"><code>&lt;div id="ticker"&gt;&lt;/div&gt;
 
 &lt;script type="text/javascript" src="jquery.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="doticker.min.js"&gt;&lt;/script&gt;
@@ -70,7 +69,7 @@ $(function() {
 
 			<h2 class="toggle closed"><a href="javascript:void(0);">デモ</a></h2>
 			<div class="hidden" style="margin-left:20px; width:530px; height:576px;">
-				<!--<script src="http://jsdo.it/blogparts/eep7/js?view=design"></script><p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;"><a href="http://jsdo.it/tokkonopapa/eep7" title="jsdo.it my codes ticker jQuery plugin" target="_blank">jsdo.it my codes ticker jQuery plugin - jsdo.it - share JavaScript, HTML5 and CSS</a></p>-->
+				<script src="http://jsdo.it/blogparts/eep7/js?view=design"></script><p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;"><a href="http://jsdo.it/tokkonopapa/eep7" title="jsdo.it my codes ticker jQuery plugin" target="_blank">jsdo.it my codes ticker jQuery plugin - jsdo.it - share JavaScript, HTML5 and CSS</a></p>
 			</div>
 
 			<h2 class="toggle closed"><a href="javascript:void(0);">ダウンロード</a></h2>
@@ -80,23 +79,23 @@ $(function() {
 					<li><a href="https://github.com/tokkonopapa/doticker.js/tarball/master"><img src="https://github.com/images/modules/download/tar.png"></a></li>
 				</ul>
 				<p>あるいは次のように <a href="http://git-scm.com/" target="_blank">Git</a> でクローンを作成して下さい。</p>
-				<pre><code>$ git clone git://github.com/tokkonopapa/doticker.js</code></pre>
+				<pre class="prettyprint lang-html"><code>$ git clone git://github.com/tokkonopapa/doticker.js</code></pre>
 			</div>
 
 			<h2 class="check">ライセンス、連絡先</h2>
 			<p><a href="http://www.opensource.org/licenses/MIT" target="_blank">MIT</a> / Copyright &copy; 2011 <a href="http://twitter.com/#!/tokkonoPapa">@tokkonoPapa</a>。バグ報告や要望は、<a href="https://github.com/tokkonopapa/doticker.js/issues" target="_blank">issues list</a> にお願いします。</p>
 
-			<footer class="border"><footer>
+			<hr class="border">
 		</article>
 
 		<article id="english" class="article hidden">
-			<header class="border"></header>
+			<hr class="border">
 
 			<h2 class="check">About</h2>
-			<p><span class="logo">doticker.</span><span>js</span> is a <a href="http://jsdo.it/" target="_blank">jsdo.it</a> my codes ticker like <a href="http://twitter.com/about/resources/widgets/widget_profile" target="_blank">the official twitter profile widget</a>.</p>
+			<p><span class="logo">doticker.<span>js</span></span> is a <a href="http://jsdo.it/" target="_blank">jsdo.it</a> my codes ticker like <a href="http://twitter.com/about/resources/widgets/widget_profile" target="_blank">the official twitter profile widget</a>.</p>
 
 			<h2 class="toggle closed"><a href="javascript:void(0);">How to use</a></h2>
-			<pre class="hidden"><code>&lt;div id="ticker"&gt;&lt;/div&gt;
+			<pre class="prettyprint lang-html hidden"><code>&lt;div id="ticker"&gt;&lt;/div&gt;
 
 &lt;script type="text/javascript" src="jquery.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="doticker.min.js"&gt;&lt;/script&gt;
@@ -131,13 +130,13 @@ $(function() {
 					<li><a href="https://github.com/tokkonopapa/doticker.js/tarball/master"><img src="https://github.com/images/modules/download/tar.png"></a></li>
 				</ul>
 				<p>You can also clone the project with <a href="http://git-scm.com/" target="_blank">Git</a> by running:</p>
-				<pre><code>$ git clone git://github.com/tokkonopapa/doticker.js</code></pre>
+				<pre class="prettyprint lang-html"><code>$ git clone git://github.com/tokkonopapa/doticker.js</code></pre>
 			</div>
 
 			<h2 class="check">Licence, Contact</h2>
 			<p><a href="http://www.opensource.org/licenses/MIT" target="_blank">MIT</a> / Copyright &copy; 2011 <a href="http://twitter.com/#!/tokkonoPapa">@tokkonoPapa</a>. Bug reports to the <a href="https://github.com/tokkonopapa/doticker.js/issues" target="_blank">issues list</a> as well as requests are appreciated.</p>
 
-			<footer class="border"><footer>
+			<hr class="border">
 		</article>
 	</div>
 
@@ -145,9 +144,12 @@ $(function() {
 		<footer class="wrapper">
 			<div class="social">
 				<a href="http://twitter.com/share" class="twitter-share-button"
-					data-url="http://tokkonopapa.github.com/doticker.js/" data-count="horizontal"
+					data-url="http://tokkonopapa.github.com/doticker.js/" 
+					data-count="horizontal"
 					data-text="jsdo.itで公開したマイコードをブログに流してくれるjQueryプラグイン"
-					data-via="tokkonoPapa" data-related="tokkonoPapa" data-lang="ja">Tweet</a>
+					data-via="tokkonoPapa" 
+					data-related="tokkonoPapa" 
+					data-lang="ja">Tweet</a>
 				<script src="http://platform.twitter.com/widgets.js" async></script>
 			</div>
 
@@ -189,7 +191,7 @@ $(function() {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js"><\/script>')</script>
 
-<script src="hijs/hijs.js"></script>
+<script src="google-code-prettify/prettify.js"></script>
 <script src="js/script.js"></script>
 
 <!--

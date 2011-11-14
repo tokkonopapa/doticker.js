@@ -5,9 +5,10 @@
 
 body {
 	color: #aaa;
-	font-size: 100%;
-	font-family: sans-serif;
 	background: #222832 url("blackmamba.png");
+	font-size: 100%;
+	font-family: Myriad,Helvetica,Arial,"Meiryo","メイリオ",sans-serif;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 1.0);
 }
 
 small { font-size: 85%; }
@@ -16,12 +17,11 @@ ul { list-style: none; margin: 0; padding: 0; }
 img { border: 0; -ms-interpolation-mode: bicubic; }
 h1 {
 	line-height: 150px;
-	font-size: 100px;
-	text-shadow: -5px -5px 10px rgba(0, 0, 0, 1.0);
+	font-size: 580%;
 }
 h2, h3 {
 	line-height: 22px;
-	font-size: 120%;
+	font-size: 110%;
 }
 a, a:visited { color: #aaa; }
 a:hover { color: #fff; }
@@ -80,13 +80,12 @@ pre {
 
 .logo {
 	color: #ccc;
-	font-size: 110%;
+	font-size: 120%;
 	font-family: "Didact Gothic", sans-serif;
+	text-shadow: none;
 }
-.logo + span {
+.logo span {
 	color: #c7000a;
-	font-size: 110%;
-	font-family: "Didact Gothic", sans-serif;
 }
 
 .border {
@@ -96,11 +95,14 @@ pre {
 }
 
 #header-container {
-	height: 240px;
+	height: 200px;
 }
 
 #title {
 	margin: 0;
+}
+#title span {
+	text-shadow: -5px -5px 10px rgba(0, 0, 0, 1.0) !important;
 }
 #title + p {
 	margin-top: -30px;
@@ -135,8 +137,14 @@ pre {
 
 /* Style adjustments for viewports 480px and over */
 @media only screen and (min-width: 480px) {
+/*	body {
+		font-size: 75%;
+	}*/
 }
 
 /* Style adjustments for viewports 768px and over */
 @media only screen and (min-width: 768px) {
+/*	body {
+		font-size: 85%;
+	}*/
 }
