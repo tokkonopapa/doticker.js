@@ -14,8 +14,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	<link rel="stylesheet" href="css/theme.css">
+	<link rel="stylesheet" href="google-code-prettify/gravia.css">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Didact+Gothic">
-	<link rel="stylesheet" href="google-code-prettify/sunburst.css">
 
 	<script src="js/libs/modernizr.custom.js"></script>
 </head>
@@ -155,10 +155,10 @@ $(function() {
 	<div id="footer-container">
 		<footer class="wrapper">
 			<div class="social">
-				<a href="http://twitter.com/share" class="twitter-share-button"
+				<a href="http://twitter.com/share" class="twitter-share-button" 
 					data-url="http://tokkonopapa.github.com/doticker.js/" 
-					data-count="horizontal"
-					data-text="jsdo.itで公開したマイコードをブログに流してくれるjQueryプラグイン"
+					data-count="horizontal" 
+					data-text="jsdo.itで公開したマイコードをブログに流してくれるjQueryプラグイン" 
 					data-via="tokkonoPapa" 
 					data-related="tokkonoPapa" 
 					data-lang="ja">Tweet</a>
@@ -201,10 +201,17 @@ $(function() {
 	</div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js"><\/script>')</script>
+<script src="js/script.js"></script>
 
 <script src="google-code-prettify/prettify.js"></script>
-<script src="js/script.js"></script>
+<script>prettyPrint();</script>
+
+<script>
+	Modernizr.load({
+		test: Modernizr.boxshadow,
+		nope: "PIE-1.0beta5/PIE.js"
+	});
+</script>
 
 <!--
 <script>
@@ -219,6 +226,7 @@ $(function() {
 	}(this,document));
 </script>
 -->
+
 <script>
 	var _gaq=[['_setAccount','UA-20543951-2'],['_trackPageview'],['_trackPageLoadTime']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;

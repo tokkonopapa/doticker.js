@@ -10,9 +10,6 @@ $(function () {
 	/* contents open/close */
 	$(".toggle").click(function () {
 		$(this).toggleClass("closed");
-		$(this).next(":first").slideToggle();
+		$(this).nextAll(".hidden:first").slideToggle();
 	});
-
-	/* google-code-prettify */
-	prettyPrint();
 });

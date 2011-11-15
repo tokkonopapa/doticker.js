@@ -3,11 +3,6 @@
 */
 @import url("style.css");
 
-@font-face {
-	font-family: "Didact Gothic";
-	src: url("http://fonts.googleapis.com/css?family=Didact+Gothic") format("truetype");
-}
-
 body {
 	color: #aaa;
 	background: #222832 url("blackmamba.png");
@@ -32,9 +27,10 @@ a:hover { color: #fff; }
 div { margin: 0; padding: 0; }
 pre {
 	padding: 16px 20px;
-	background-color: #222;
-	border-radius: 8px;
+/*	background-color: #012;
+	border-radius: 8px;*/
 	box-shadow: 0 0 15px #0f1115;
+	behavior: url("PIE-1.0beta5/PIE.htc");
 }
 
 .wrapper {
