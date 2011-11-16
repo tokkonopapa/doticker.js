@@ -9,6 +9,7 @@ body {
 	font-size: 100%;
 	font-family: Myriad,Helvetica,Arial,"Meiryo","メイリオ",sans-serif;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 1.0);
+	behavior: url("css/ie-css3.htc");
 }
 
 small { font-size: 85%; }
@@ -30,7 +31,7 @@ pre {
 /*	background-color: #012;
 	border-radius: 8px;*/
 	box-shadow: 0 0 15px #0f1115;
-	behavior: url("css/ie-css3.htc");
+/*	behavior: url("PIE-1.0beta5/PIE.htc");*/
 }
 
 .wrapper {
