@@ -187,6 +187,20 @@ $(function() {
 <script src="google-code-prettify/prettify.js"></script>
 <script>prettyPrint();</script>
 
+<!--
+<script>
+	Modernizr.load({
+		test: Modernizr.boxshadow,
+		nope: "PIE-1.0beta5/PIE.js",
+		complete: function() {
+			$('pre.prettyprint').each(function() {
+				PIE.attach(this);
+			});
+		}
+	});
+</script>
+-->
+
 <script>
 	var _gaq=[['_setAccount','UA-20543951-2'],['_trackPageview'],['_trackPageLoadTime']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
