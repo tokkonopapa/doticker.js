@@ -30,7 +30,7 @@ pre {
 /*	background-color: #012;
 	border-radius: 8px;*/
 	box-shadow: 0 0 15px #0f1115;
-	behavior: url("PIE-1.0beta5/PIE.htc");
+	behavior: url("css/ie-css3.htc");
 }
 
 .wrapper {
