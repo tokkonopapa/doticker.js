@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="google-code-prettify/gravia.css">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Didact+Gothic">
 
-	<script src="js/libs/modernizr.custom.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
 	<div id="header-container">
@@ -220,11 +220,11 @@ $(function() {
 	var c,e=d.createDocumentFragment(),f=d.getElementsByTagName("script")[0],
 	a=function(a,b){if(!d.getElementById(b)){c=d.createElement("script");
 	c.src=a;c.id=b||null;c.async=1;e.appendChild(c);}};
-	a(("https:"==location.protocol?"http://ssl":"http://www")+".google-analytics.com/ga.js");
-	a("https://apis.google.com/js/plusone.js");
-	a("http://b.st-hatena.com/js/bookmark_button_wo_al.js");
-	a("http://platform.twitter.com/widgets.js");
-	a("http://connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
+	a(("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js");
+	a("//apis.google.com/js/plusone.js");
+	a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
+	a("//platform.twitter.com/widgets.js");
+	a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
 	f.parentNode.insertBefore(e,f);
 })(this,document);
 </script>
