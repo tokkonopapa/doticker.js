@@ -1,1 +1,1 @@
-http://tokkonopapa.github.com/doticker.js
+http://tokkonopapa.github.com/doticker.js/
