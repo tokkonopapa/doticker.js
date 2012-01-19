@@ -154,6 +154,7 @@ $(function() {
 
 	<div id="footer-container">
 		<footer class="wrapper">
+<!--
 			<div class="social">
 				<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
 					data-hatena-bookmark-layout="standard"
@@ -189,6 +190,12 @@ $(function() {
 					data-show-faces="false">
 				</div>
 			</div>
+-->
+			<span class='st_hatena_hcount' displayText='Hatena'></span>
+			<span class='st_twitter_hcount' displayText='Tweet'></span>
+			<span class='st_facebook_hcount' displayText='Facebook'></span>
+			<span class='st_fblike_hcount'></span>
+			<span class='st_plusone_hcount'></span>
 		</footer>
 	</div>
 
@@ -213,6 +220,21 @@ $(function() {
 </script>
 -->
 
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-20543951-2']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+
+<!--
 <script>
 (function(w,d){
 	w._gaq=[["_setAccount","UA-20543951-2"],["_trackPageview"]];
@@ -228,6 +250,7 @@ $(function() {
 	f.parentNode.insertBefore(e,f);
 })(this,document);
 </script>
+-->
 
 <!--[if lt IE 7 ]>
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
