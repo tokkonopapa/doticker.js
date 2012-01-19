@@ -142,6 +142,7 @@ pre {
 .social {
 	float: left;
 	margin: 0 20px 0 0;
+	text-shadow: none;
 	vertical-align: bottom;
 }
 
