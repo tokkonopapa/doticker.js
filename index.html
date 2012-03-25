@@ -154,7 +154,6 @@ $(function() {
 
 	<div id="footer-container">
 		<footer class="wrapper">
-<!--
 			<div class="social">
 				<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
 					data-hatena-bookmark-layout="standard"
@@ -190,7 +189,8 @@ $(function() {
 					data-show-faces="false">
 				</div>
 			</div>
--->
+
+<!-- ShareThis
 			<div style="text-shadow: none;">
 				<span class='st_hatena_hcount' displayText='Hatena'></span>
 				<span class='st_twitter_hcount' displayText='Tweet'></span>
@@ -198,6 +198,7 @@ $(function() {
 				<span class='st_fblike_hcount'></span>
 				<span class='st_plusone_hcount'></span>
 			</div>
+-->
 		</footer>
 	</div>
 
@@ -222,6 +223,22 @@ $(function() {
 </script>
 -->
 
+<script>
+(function(w,d){
+	w._gaq=[["_setAccount","UA-20543951-2"],["_trackPageview"]];
+	w.___gcfg={lang:"ja"};
+	var s,e=d.getElementsByTagName("script")[0],
+	a=function(u,i){if(!d.getElementById(i)){s=d.createElement("script");
+	s.src=u;if(i){s.id=i;}e.parentNode.insertBefore(s,e);}};
+	a(("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js","ga");
+	a("https://apis.google.com/js/plusone.js");
+	a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
+	a("//platform.twitter.com/widgets.js","twitter-wjs");
+	a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
+})(this,document);
+</script>
+
+<!-- ShareThis
 <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'0ff971ea-4863-425b-a73f-b55702e19584'});</script>
 
 <script type="text/javascript">
@@ -236,23 +253,6 @@ $(function() {
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(ga, s);
 	})();
-</script>
-
-<!--
-<script>
-(function(w,d){
-	w._gaq=[["_setAccount","UA-20543951-2"],["_trackPageview"]];
-	w.___gcfg={lang:"ja"};
-	var c,e=d.createDocumentFragment(),f=d.getElementsByTagName("script")[0],
-	a=function(a,b){if(!d.getElementById(b)){c=d.createElement("script");
-	c.src=a;c.id=b||null;c.async=1;e.appendChild(c);}};
-	a(("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js");
-	a("//apis.google.com/js/plusone.js");
-	a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
-	a("//platform.twitter.com/widgets.js");
-	a("//connect.facebook.net/ja_JP/all.js#xfbml=1","facebook-jssdk");
-	f.parentNode.insertBefore(e,f);
-})(this,document);
 </script>
 -->
 
