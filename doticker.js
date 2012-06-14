@@ -83,6 +83,7 @@
 	'height:[height];' +
 	'margin:0 1px !important;' +
 	'font-size:12px;' +
+	'line-height:1.3em;' +
 	'overflow:[scrollbar];' +
 	'border-radius:5px;' +
 	'background:[bodyground];' +
